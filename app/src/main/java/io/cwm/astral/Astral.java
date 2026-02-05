@@ -3,8 +3,8 @@
  */
 package io.cwm.astral;
 
-import io.cwm.engine.game_logic.StartupHandler;
-import io.cwm.engine.rendering.GamePanel;
+import io.cwm.engine.rendering.ImagePanel;
+import io.cwm.engine.resources.ResourceLocator;
 
 import javax.swing.*;
 
@@ -19,9 +19,11 @@ public class Astral {
 
     public static void startGame() {
         //setup
-        AstralGamePanel panel = new AstralGamePanel();
-
-        StartupHandler.startGame(NAME, WIDTH, HEIGHT, panel);
+        JFrame frame = new JFrame();
+        frame.add(new ImagePanel(new ResourceLocator("img.png")));
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 400);
+        frame.setVisible(true);
     }
 }
 

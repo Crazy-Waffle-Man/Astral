@@ -3,3 +3,6 @@
 
 # Ignore Gradle build output directory
 build
+
+# We don't actually need to keep track of my IDE
+.idea

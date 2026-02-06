@@ -3,15 +3,12 @@
  */
 package io.cwm.astral;
 
+import io.cwm.engine.logic.GameManager;
 import io.cwm.engine.rendering.ImagePanel;
 import io.cwm.engine.resources.ResourceLocator;
 
-import javax.swing.*;
-
 public class Astral {
     public static final String NAME = "Astral";
-    public static final int WIDTH = 400;
-    public static final int HEIGHT = 300;
 
     public static void main(String[] args) {
         Astral.startGame();
@@ -19,11 +16,7 @@ public class Astral {
 
     public static void startGame() {
         //setup
-        JFrame frame = new JFrame();
-        frame.add(new ImagePanel(new ResourceLocator("img.png")));
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 400);
-        frame.setVisible(true);
+        GameManager.addObject(new ImagePanel(new ResourceLocator("assets/textures/img.png", true)));
+        GameManager.startLoop(60);
     }
 }
-

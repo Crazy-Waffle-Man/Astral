@@ -10,6 +10,9 @@ public class ResourceLocator {
     }
 
     public ResourceLocator(String path, boolean safely) {
+        if (path.charAt(0) != '/' && safely) {
+            path = "/" + path;
+        }
         resourceLocation = path;
         if (getResource() == null) {
             if (!safely) {throw new IllegalArgumentException("Missing file: "+resourceLocation);}

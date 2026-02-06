@@ -42,7 +42,6 @@ public class GameManager {
         if (debugMode) {
             System.out.println("Launching in debug mode. Hitboxes will be drawn, and custom behavior added by the game classes will activate.");
         }
-
         SwingUtilities.invokeLater(
                 () -> {
                     JFrame frame = new JFrame();

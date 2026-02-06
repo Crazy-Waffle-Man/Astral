@@ -31,9 +31,24 @@ public class Astral {
                                 new ResourceLocator("assets/textures/img.png"),
                                 new Vec2(100, 541)
                         ),
-                        new Vec2(300, 0)
+                        10,
+                        new Vec2(200, 100)
                 )
         );
+
+        Sprite slimeSpawn = new Sprite(
+                new SpriteSheet(
+                        new ResourceLocator("assets/textures/slime_spawn.png"),
+                        new Vec2(100, 100)
+                ),
+                10,
+                new Vec2(400, 200)
+        );
+
+        GameManager.addObject(slimeSpawn);
+
+        TestingSlime test = new TestingSlime(new Vec2(600, 200));
+        GameManager.addObject(test);
 
         GameManager.startLoop(60);
     }

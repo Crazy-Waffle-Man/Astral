@@ -48,6 +48,7 @@ public class GameManager {
                     JFrame frame = new JFrame();
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setSize(400, 400);
+                    frame.setLayout(null);
                     frame.setVisible(true);
 
                     for (Drawable drawable : drawables) {

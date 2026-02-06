@@ -4,7 +4,10 @@
 package io.cwm.astral;
 
 import io.cwm.engine.logic.GameManager;
+import io.cwm.engine.logic.math.Vec2;
 import io.cwm.engine.rendering.ImagePanel;
+import io.cwm.engine.rendering.Sprite;
+import io.cwm.engine.rendering.SpriteSheet;
 import io.cwm.engine.resources.ResourceLocator;
 
 public class Astral {
@@ -16,7 +19,22 @@ public class Astral {
 
     public static void startGame() {
         //setup
-        GameManager.addObject(new ImagePanel(new ResourceLocator("assets/textures/img.png", true)));
+        GameManager.addObject(
+                new ImagePanel(
+                        new ResourceLocator("assets/textres/img.png")
+                )
+        );
+
+        GameManager.addObject(
+                new Sprite(
+                        new SpriteSheet(
+                                new ResourceLocator("assets/textures/img.png"),
+                                new Vec2(100, 541)
+                        ),
+                        new Vec2(300, 0)
+                )
+        );
+
         GameManager.startLoop(60);
     }
 }
